@@ -3,12 +3,21 @@ import { Route, Routes } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import Navbar from './Components/Navbar';
+import Home from './Pages/Home/Home';
+import Login from './Pages/Authentication/Login';
+import SignUp from './Pages/Authentication/SignUp';
 
 function App() {
   return (
     <div data-theme="dark">
-            <div className=' text-accent min-h-screen flex flex-col items-center justify-between'>
+      <div className=' text-accent min-h-screen flex flex-col items-center justify-between'>
         <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='home' element={<Home />} />
+          <Route path='login' element={<Login />} />
+          <Route path='signup' element={<SignUp />} />
+        </Routes>
         {/* <Routes>
           <Route path='/' element={<Home />} />
           <Route path='home' element={<Home />} />

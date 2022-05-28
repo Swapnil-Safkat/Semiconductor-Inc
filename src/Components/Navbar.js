@@ -7,25 +7,32 @@ import { signOut } from 'firebase/auth';
 const Navbar = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
-
+  console.log(user);
   const menuItems =
     <>
       <li><Link to='/home'>Home</Link></li>
-      <li><Link to='/appointment'>Appointment</Link></li>
+      {/* <li><Link to='/appointment'>Appointment</Link></li> */}
       {
         user && <li><Link to='/dashboard'>Dashboard</Link></li>
       }
       <li><Link to='/reviews'>Reviews</Link></li>
       <li><Link to='/contact'>Contact Us</Link></li>
       <li><Link to='/about'>About</Link></li>
-      <li>{user ? <button onClick={() => {
-        signOut(auth);
-        localStorage.removeItem('accessToken');
-        navigate('/login');
-      }} className='btn btn-ghost'>Sign Out</button> : <Link to='/login'>Login</Link>}</li>
+      <li>{user ? <>
+        <div class="avatar">
+          <div class="w-8 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">
+            <img alt='avatar' src={user.photoURL || "https://api.lorem.space/image/face?hash=64318"} />
+          </div>
+          <h1>{user.displayName}</h1>
+        </div>
+        <button onClick={() => {
+          signOut(auth);
+          localStorage.removeItem('accessToken');
+          navigate('/login');
+        }} className='btn btn-ghost h-full font-semibold'>Sign Out</button></> : <Link to='/login'>Login</Link>}</li>
     </>
   return (
-    <div className="navbar bg-white sticky top-0 z-50 ">
+    <div className="navbar bg-primary sticky top-0 z-50 ">
       <div className="navbar-start w-full mx-auto">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -35,10 +42,10 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Doctors Portal</a>
+        <a href='/' className="btn btn-ghost normal-case text-xl text-white">Semiconductor Inc</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">
+        <ul className="menu menu-horizontal p-0 text-gray-100">
           {menuItems}
         </ul>
       </div>
