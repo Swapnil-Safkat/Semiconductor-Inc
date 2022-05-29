@@ -32,10 +32,10 @@ const Blogs = () => {
     <div className='h-screen w-full text-white' >
       <h1 className="text-center text-5xl my-8">Blogs</h1>
       {
-        blogs.map(blog => 
-          <div class="card w-full p-6 bg-base-100 shadow-xl">
-            <div class="card-body bg-neutral shadow-lg rounded-lg">
-              <h2 class="card-title">{blog.ques}</h2>
+        blogs.map(blog =>
+          <div className="card w-full p-6 bg-base-100 shadow-xl">
+            <div className="card-body bg-neutral shadow-lg rounded-lg">
+              <h2 className="card-title">{blog.ques}</h2>
               <p>{blog.ans}</p>
 
             </div>
