@@ -1,5 +1,5 @@
 const hostLink = ()=>{
 return 'http://localhost:5000' ;
-// return 'https://doctors-portal-47.herokuapp.com' ;
+// return 'https://semiconductor-inc.herokuapp.com' ;
 };
 export default hostLink;
