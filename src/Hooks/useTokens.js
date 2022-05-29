@@ -5,7 +5,7 @@ const useTokens = (user) => {
   const [token, setToken] = useState('');
   useEffect(() => {
     const email = user?.user?.email;
-    const currentUser = { email };
+    const currentUser = { email, role:'user' };
     if (email) {
       const url = `${hostLink()}/user`;
       fetch(url, {

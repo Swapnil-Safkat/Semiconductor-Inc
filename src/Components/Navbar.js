@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import auth from '../Firebase.init';
@@ -9,16 +9,21 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const [profile, setProfile] = useState({});
-  fetch(`${hostLink()}/user/${user.email}`, {
-    method: 'GET',
-    headers: {
-      'authorization': `bearer ${localStorage.getItem('accessToken')}`
+  useEffect(() => {
+    if (user) {
+      fetch(`${hostLink()}/user/${user.email}`, {
+        method: 'GET',
+        headers: {
+          'authorization': `bearer ${localStorage.getItem('accessToken')}`
+        }
+      }).then(res => res.json()).then(result => setProfile(result));
     }
-  }).then(res => res.json()).then(result => setProfile(result));
+  }, [user])
+
+
   const menuItems =
     <>
       <li><NavLink to='/home'>Home</NavLink></li>
-      {/* <li><NavLink to='/appointment'>Appointment</NavLink></li> */}
       {
         user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
       }

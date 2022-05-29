@@ -23,7 +23,7 @@ const HomeBanner = () => {
           <a href="#slide1" className="btn btn-circle mr-2">❮</a>
           <div className=' h-full flex flex-col justify-center items-center w-1/2'>
             <h1 className='text-5xl text-white mb-3'>Best Quality Product For Your Project</h1>
-            <h1 className='text-lg text-white'>We garuntee you the best quality product possible in the market, made out of the best quality material with our own nano technology.</h1>
+            <h1 className='text-lg text-white'>We guarantee you the best quality product possible in the market, made out of the best quality material with our own nano technology.</h1>
             <div className='w-full flex items-start mt-4'>
               <button className="btn btn-outline text-white">Find Products</button>
             </div>
@@ -32,16 +32,7 @@ const HomeBanner = () => {
         </div>
       </div>
     </div>
-    // <div className="hero w-full py-20 md:py-32 bg-[url('https://www.nxp.com/assets/images/en/banners/BANNER-MOTOR-CONTROL-BROCHURE-HOMEPAGE.jpg')]">
-    //   <div className="hero-content w-full md:mx-8 flex-col lg:flex-row-reverse">
-    //     {/* <img src={chairImg} alt='' className="rounded-lg shadow-2xl md:mb-6 w-full md:w-1/2" /> */}
-    //     <div className='w-full md:w-1/2'>
-    //       <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
-    //       <p className="pt-6">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-    //       <Button>Get Started</Button>
-    //     </div>
-    //   </div>
-    // </div>
+
   );
 };
 

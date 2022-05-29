@@ -23,12 +23,13 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu pr-4 py-1 overflow-y-auto w-56 bg-base-100 text-base-content">
           <li ><NavLink className='rounded-r-full' to='/dashboard'>Profile</NavLink></li>
-          <li ><NavLink className='rounded-r-full' to='/dashboard/my-orders'>Orders</NavLink></li>
-          <li ><NavLink className='rounded-r-full' to='/dashboard/add-review'>Add a Review</NavLink></li>
-          {admin && <>
-            <li><NavLink to='/dashboard/users'>All Users</NavLink></li>
-            <li><NavLink to='/dashboard/addDoctor'>Add Doctor</NavLink></li>
-            <li><NavLink to='/dashboard/manageDoctor'>Manage Doctors</NavLink></li>
+          {admin ? <>
+            <li><NavLink to='/dashboard/all-users'>All Users</NavLink></li>
+            <li><NavLink to='/dashboard/add-product'>Add Product</NavLink></li>
+            <li><NavLink to='/dashboard/manageDoctor'>Manage Product</NavLink></li>
+          </> : <>
+            <li ><NavLink className='rounded-r-full' to='/dashboard/my-orders'>Orders</NavLink></li>
+            <li ><NavLink className='rounded-r-full' to='/dashboard/add-review'>Add a Review</NavLink></li>
           </>}
         </ul>
       </div>

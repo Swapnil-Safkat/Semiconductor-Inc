@@ -10,6 +10,7 @@ const Login = () => {
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [signInWithEmailAndPassword, userEmail, loadingEmail, errorEmail] = useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
+
   const [token] = useTokens(userEmail || userGoogle);
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
