@@ -1,8 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { useQuery } from 'react-query'
 import hostLink from '../../Components/host';
-import Loading from '../../Components/Loading';
 import { toast } from 'react-toastify';
 
 const AddProduct = () => {
@@ -55,43 +53,6 @@ const AddProduct = () => {
         })
     }
 
-    // const img = data.image[0];
-    // const formData = new FormData();
-    // formData.append('image', img);
-    // console.log(formData);
-    // const url = `https://api.imgbb.com/1/upload?key=${imgStorageKey}`;
-    // fetch(url, {
-    //   method: 'POST',
-    //   body: formData
-    // }).then(res => res.json())
-    //   .then(result => {
-    //     if (result.success) {
-    //       const img = result.data.url;
-    //       const doctor = {
-    //         name: data.name,
-    //         email: data.email,
-    //         specialty: data.specialty,
-    //         img
-    //       };
-    //       //send to db
-    //       fetch(`${hostLink()}doctor`, {
-    //         method: 'POST',
-    //         headers: {
-    //           'content-type': 'application/json',
-    //           authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    //         },
-    //         body: JSON.stringify(doctor)
-    //       }).then(res => res.json())
-    //         .then(inserted => {
-    //           console.log(inserted)
-    //           if (inserted.insertedId) {
-    //             toast.success('doctor added');
-    //             reset()
-    //           } else toast.error('doctor adding failed');
-    //         })
-    //       console.log(doctor);
-    //     }
-    //   })
   }
   const inputClass = `input w-full mt-2 border-2 border-gray-600 focus:border-gray-100`;
   // if (isLoading) return <Loading></Loading>
@@ -174,9 +135,9 @@ const AddProduct = () => {
 
         {/* photo form */}
 
-        <div class="flex flex-col form-control w-full border-2 rounded-lg p-4">
+        <div className="flex flex-col form-control w-full border-2 rounded-lg p-4">
           <h1 className='text-lg text-center text-white'>Image</h1>
-          <div class="">
+          <div className="">
             <label className="label text-sm font-semibold py-0 ml-2">
               <span className="label-text ">Attach Image file</span>
             </label>
@@ -197,8 +158,8 @@ const AddProduct = () => {
               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               {...register("fileImage")} />
           </div>
-          <div class="divider text-xs">OR</div>
-          <div class="">
+          <div className="divider text-xs">OR</div>
+          <div className="">
             <label className="label text-sm font-semibold py-0 ml-2">
               <span className="label-text ">Attach Image Link</span>
             </label>

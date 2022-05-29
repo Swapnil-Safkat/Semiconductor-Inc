@@ -27,7 +27,7 @@ const Navbar = () => {
       {
         user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
       }
-      <li><NavLink to='/reviews'>Reviews</NavLink></li>
+      <li><NavLink to='/blogs'>Blogs</NavLink></li>
       <li><NavLink to='/contact'>Contact Us</NavLink></li>
       <li><NavLink to='/about'>About</NavLink></li>
       <li>{user ? <>

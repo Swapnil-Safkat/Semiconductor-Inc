@@ -26,7 +26,7 @@ const Dashboard = () => {
           {admin ? <>
             <li><NavLink to='/dashboard/all-users'>All Users</NavLink></li>
             <li><NavLink to='/dashboard/add-product'>Add Product</NavLink></li>
-            <li><NavLink to='/dashboard/manageDoctor'>Manage Product</NavLink></li>
+            <li><NavLink to='/dashboard/manage-product'>Manage Products</NavLink></li>
           </> : <>
             <li ><NavLink className='rounded-r-full' to='/dashboard/my-orders'>Orders</NavLink></li>
             <li ><NavLink className='rounded-r-full' to='/dashboard/add-review'>Add a Review</NavLink></li>

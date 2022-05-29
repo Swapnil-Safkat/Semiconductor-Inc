@@ -16,6 +16,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProduct from './Pages/Dashboard/ManageProduct';
 import NotFound from './Components/NotFound';
 import AllUsers from './Pages/Dashboard/AllUsers';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='home' element={<Home />} />
           <Route path='login' element={<Login />} />
           <Route path='signup' element={<SignUp />} />
+          <Route path='blogs' element={<Blogs />} />
           <Route path='dashboard' element={<RequiredAuth><Dashboard /></RequiredAuth>} >
             <Route index element={<MyProfile />} />
             <Route path='my-orders' element={<MyOrders />} />
@@ -37,23 +39,7 @@ function App() {
           </Route>
         <Route path='*' element={<NotFound />} />
         </Routes>
-        {/* <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='home' element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route path='login' element={<Login />} />
-          <Route path='signup' element={<SignUp />} />
-          <Route path='appointment' element={<RequiredAuth><Appointment /></RequiredAuth>} />
-          <Route path='dashboard' element={<RequiredAuth><Dashboard /></RequiredAuth>} >
-            <Route index element={<MyAppointments />} />
-            <Route path='reviews' element={<MyReviews />} />
-            <Route path='history' element={<MyHistory />} />
-            <Route path='payment/:_id' element={<Payment />} />
-            <Route path='users' element={<RequiredAdmin><Users /></RequiredAdmin>} />
-            <Route path='addDoctor' element={<RequiredAdmin><AddDoctor /></RequiredAdmin>} />
-            <Route path='manageDoctor' element={<RequiredAdmin><ManageDoctor /></RequiredAdmin>} />
-          </Route>
-        </Routes> */}
+
         <ToastContainer
           position="top-right"
           autoClose={3000}

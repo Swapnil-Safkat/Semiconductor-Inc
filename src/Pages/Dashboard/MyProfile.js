@@ -54,7 +54,7 @@ const MyProfile = () => {
       })
   }
   if (loading || isLoading) return <Loading />
-  const fieldClass = `w-full  text-start text-gray-100 font-bold text-base tracking-[.07em] my-2`;
+  const fieldClass = `w-full  text-start text-gray-100 font-bold text-base tracking-[.05em] my-2`;
   const infoClass = `font-semibold text-base`;
   const inputClass = `input w-full mt-2 border-2 border-gray-600 focus:border-gray-100`;
   return (
@@ -72,12 +72,12 @@ const MyProfile = () => {
               {/* user information */}
               <h1 className={fieldClass}>Name: <span className={infoClass}>{profile?.name || user?.displayName}</span></h1>
               <h1 className={fieldClass}>Email: <span className={infoClass}>{profile?.email || user?.email}</span></h1>
-              <h1 className={fieldClass}>Contact: <span className={infoClass}>{profile.contact ? profile.contact : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
-              <h1 className={fieldClass}>University: <span className={infoClass}>{profile.university ? profile.university : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
-              <h1 className={fieldClass}>Department: <span className={infoClass}>{profile.department ? profile.department : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
-              <h1 className={fieldClass}>Hometown: <span className={infoClass}>{profile.hometown ? profile.hometown : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
-              <h1 className={fieldClass}>Github: <span className={infoClass}>{profile.github ? profile.github : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
-              <h1 className={fieldClass}>Linkedin: <span className={infoClass}>{profile.linkedin ? profile.linkedin : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
+              <h1 className={fieldClass}>Contact: <span className={infoClass}>{profile?.contact ? profile?.contact : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
+              <h1 className={fieldClass}>University: <span className={infoClass}>{profile?.university ? profile?.university : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
+              <h1 className={fieldClass}>Department: <span className={infoClass}>{profile?.department ? profile?.department : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
+              <h1 className={fieldClass}>Hometown: <span className={infoClass}>{profile?.hometown ? profile?.hometown : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
+              <h1 className={fieldClass}>Github: <span className={infoClass}>{profile?.github ? profile?.github : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
+              <h1 className={fieldClass}>Linkedin: <span className={infoClass}>{profile?.linkedin ? profile?.linkedin : <span className='text-gray-500 font-light text-sm'>Unknown</span>}</span></h1>
             </div>
           </div>
           <div className="text-center w-full h-full text-gray-100">
