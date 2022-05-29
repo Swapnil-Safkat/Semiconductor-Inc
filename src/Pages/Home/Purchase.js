@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import hostLink from '../../Components/host';
 import { useForm } from "react-hook-form";
-import { useAuthState} from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
 const Purchase = () => {
   const { id } = useParams();
@@ -21,7 +22,27 @@ const Purchase = () => {
   }, [id]
   )
   const onSubmit = data => {
-    console.log(data);
+    data.productName = product.name;
+    //send to backend
+    if (+data.amount < +product.minOrder) toast.error(`Minimum Order Amount ${product.minOrder}`);
+    else if (+data.amount > +product.available) toast.error(`We do not have that much product. Please reduce your order`)
+    else {
+      fetch(`${hostLink()}/order`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        },
+        body: JSON.stringify(data)
+      }).then(res => res.json())
+        .then(inserted => {
+          if (inserted.insertedId) {
+            toast.success('Order Placed.');
+
+          } else toast.error('Some Problem Occurred');
+        })
+    }
+
   }
 
   const inputClass = `input w-full mt-2 border-2 border-gray-300`;
