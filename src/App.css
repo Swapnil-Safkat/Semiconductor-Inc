@@ -40,3 +40,8 @@
   height:4rem;
   width: 8rem;
 }
+.active{
+  background-color: #282c34;
+  color: aliceblue;
+}
+

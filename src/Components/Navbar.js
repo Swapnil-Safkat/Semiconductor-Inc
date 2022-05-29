@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import auth from '../Firebase.init';
 import { signOut } from 'firebase/auth';
 
@@ -10,14 +10,14 @@ const Navbar = () => {
   console.log(user);
   const menuItems =
     <>
-      <li><Link to='/home'>Home</Link></li>
-      {/* <li><Link to='/appointment'>Appointment</Link></li> */}
+      <li><NavLink to='/home'>Home</NavLink></li>
+      {/* <li><NavLink to='/appointment'>Appointment</NavLink></li> */}
       {
-        user && <li><Link to='/dashboard'>Dashboard</Link></li>
+        user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
       }
-      <li><Link to='/reviews'>Reviews</Link></li>
-      <li><Link to='/contact'>Contact Us</Link></li>
-      <li><Link to='/about'>About</Link></li>
+      <li><NavLink to='/reviews'>Reviews</NavLink></li>
+      <li><NavLink to='/contact'>Contact Us</NavLink></li>
+      <li><NavLink to='/about'>About</NavLink></li>
       <li>{user ? <>
         <div class="avatar">
           <div class="w-8 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">
@@ -29,7 +29,7 @@ const Navbar = () => {
           signOut(auth);
           localStorage.removeItem('accessToken');
           navigate('/login');
-        }} className='btn btn-ghost h-full font-semibold'>Sign Out</button></> : <Link to='/login'>Login</Link>}</li>
+        }} className='btn btn-ghost h-full font-semibold'>Sign Out</button></> : <NavLink to='/login'>Login</NavLink>}</li>
     </>
   return (
     <div className="navbar bg-primary sticky top-0 z-50 ">
