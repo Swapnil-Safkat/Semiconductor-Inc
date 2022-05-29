@@ -28,8 +28,7 @@ const Navbar = () => {
         user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
       }
       <li><NavLink to='/blogs'>Blogs</NavLink></li>
-      <li><NavLink to='/contact'>Contact Us</NavLink></li>
-      <li><NavLink to='/about'>About</NavLink></li>
+      <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
       <li>{user ? <>
         <div className="avatar">
           <div className="w-8 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">

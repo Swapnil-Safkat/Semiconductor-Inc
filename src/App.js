@@ -17,6 +17,8 @@ import ManageProduct from './Pages/Dashboard/ManageProduct';
 import NotFound from './Components/NotFound';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import Blogs from './Pages/Blogs/Blogs';
+import Portfolio from './Pages/Portfolio/Portfolio';
+import Purchase from './Pages/Home/Purchase';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path='login' element={<Login />} />
           <Route path='signup' element={<SignUp />} />
           <Route path='blogs' element={<Blogs />} />
+          <Route path='portfolio' element={<Portfolio />} />
+          <Route path='purchase/:id' element={<RequiredAuth><Purchase /></RequiredAuth>} />
           <Route path='dashboard' element={<RequiredAuth><Dashboard /></RequiredAuth>} >
             <Route index element={<MyProfile />} />
             <Route path='my-orders' element={<MyOrders />} />
@@ -37,7 +41,7 @@ function App() {
             <Route path='manage-product' element={<RequiredAdmin><ManageProduct /></RequiredAdmin>} />
             <Route path='all-users' element={<RequiredAdmin><AllUsers /></RequiredAdmin>} />
           </Route>
-        <Route path='*' element={<NotFound />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
 
         <ToastContainer
