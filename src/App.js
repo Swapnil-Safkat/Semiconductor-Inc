@@ -6,6 +6,12 @@ import Navbar from './Components/Navbar';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Authentication/Login';
 import SignUp from './Pages/Authentication/SignUp';
+import RequiredAuth from './Components/RequiredAuth';
+import RequiredAdmin from './Components/RequiredAdmin';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import MyProfile from './Pages/Dashboard/MyProfile';
+import AddReview from './Pages/Dashboard/AddReview';
 
 function App() {
   return (
@@ -17,6 +23,11 @@ function App() {
           <Route path='home' element={<Home />} />
           <Route path='login' element={<Login />} />
           <Route path='signup' element={<SignUp />} />
+          <Route path='dashboard' element={<RequiredAuth><Dashboard /></RequiredAuth>} >
+            <Route index element={<MyProfile />} />
+            <Route path='my-orders' element={<MyOrders />} />
+            <Route path='add-review' element={<AddReview />} />
+          </Route>
         </Routes>
         {/* <Routes>
           <Route path='/' element={<Home />} />
