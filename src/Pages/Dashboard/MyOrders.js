@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 import hostLink from '../../Components/host';
 import auth from '../../Firebase.init';
 
+import { toast } from 'react-toastify';
 const MyOrders = () => {
   const [user] = useAuthState(auth);
   const { data: orders, isLoading, isError, refetch } = useQuery('orders', () => fetch(`${hostLink()}/orders?email=${user?.email}`, {
@@ -12,6 +13,10 @@ const MyOrders = () => {
       authorization: `Bearer ${localStorage.getItem('accessToken')}`
     }
   }).then(res => res.json()));
+  const payment = () => {
+    toast.success("Payment Successful")
+
+  };
   return (
     <div>
       <div className="overflow-x-auto w-11/12 mx-auto text-gray-100">
@@ -23,7 +28,7 @@ const MyOrders = () => {
               <th>Email</th>
               <th>Product</th>
               <th>Amount</th>
-              <th>Remove Order</th>
+              <th>Payment</th>
             </tr>
           </thead>
           <tbody>
@@ -33,7 +38,8 @@ const MyOrders = () => {
                 <td>{a.email}</td>
                 <td>{a.name}</td>
                 <td>{a.amount}</td>
-                <td><button className='btn btn-xs text-gray-100'>Cancel</button></td>
+                <td><button onClick={() => { payment() }
+                } className='btn btn-xs text-gray-100'>Pay</button></td>
               </tr>
               )
             }
