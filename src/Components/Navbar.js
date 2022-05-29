@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import auth from '../Firebase.init';
 import { signOut } from 'firebase/auth';
+import hostLink from './host';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
-  console.log(user);
+  const [profile, setProfile] = useState({});
+  fetch(`${hostLink()}/user/${user.email}`, {
+    method: 'GET',
+    headers: {
+      'authorization': `bearer ${localStorage.getItem('accessToken')}`
+    }
+  }).then(res => res.json()).then(result => setProfile(result));
   const menuItems =
     <>
       <li><NavLink to='/home'>Home</NavLink></li>
@@ -19,9 +26,9 @@ const Navbar = () => {
       <li><NavLink to='/contact'>Contact Us</NavLink></li>
       <li><NavLink to='/about'>About</NavLink></li>
       <li>{user ? <>
-        <div class="avatar">
-          <div class="w-8 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">
-            <img alt='avatar' src={user.photoURL || "https://api.lorem.space/image/face?hash=64318"} />
+        <div className="avatar">
+          <div className="w-8 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">
+            <img alt='avatar' src={profile.img || user.photoURL || "https://api.lorem.space/image/face?hash=64318"} />
           </div>
           <h1>{user.displayName}</h1>
         </div>
@@ -42,7 +49,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <a href='/' className="btn btn-ghost normal-case text-xl text-white p-0">Semiconductor Inc</a>
+        <Link to='/' className="btn btn-ghost normal-case text-xl text-white p-0">Semiconductor Inc</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0 text-gray-100">

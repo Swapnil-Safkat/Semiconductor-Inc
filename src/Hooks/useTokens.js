@@ -7,7 +7,8 @@ const useTokens = (user) => {
     const email = user?.user?.email;
     const currentUser = { email };
     if (email) {
-      fetch(`${hostLink()}user`, {
+      const url = `${hostLink()}/user`;
+      fetch(url, {
         method: 'PUT',
         headers: {
           'content-type': 'application/json'
