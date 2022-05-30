@@ -36,6 +36,7 @@ const Blogs = () => {
           <div className="card w-full p-6 bg-base-100 shadow-xl">
             <div className="card-body bg-neutral shadow-lg rounded-lg">
               <h2 className="card-title">{blog.ques}</h2>
+              <hr />
               <p>{blog.ans}</p>
 
             </div>

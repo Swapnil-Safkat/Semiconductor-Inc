@@ -13,9 +13,9 @@ const Product = ({ product }) => {
           <h2 className="card-title text-center p-4 h-20">
             {name}
           </h2>
-          <hr className='w-11/12 mx-auto'/>
-          <div class="overflow-x-auto w-full">
-            <table class="table table-compact w-full text-sm">
+          <hr className='w-11/12 mx-auto' />
+          <div className="overflow-x-auto w-full">
+            <table className="table table-compact w-full text-sm">
               <tbody>
                 <tr >
                   <th className={tableClass}>Price</th>

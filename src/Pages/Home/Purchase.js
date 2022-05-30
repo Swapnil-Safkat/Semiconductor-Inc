@@ -47,11 +47,11 @@ const Purchase = () => {
 
   const inputClass = `input w-full mt-2 border-2 border-gray-300`;
   return (
-    <div class="hero w-full min-h-screen bg-base-200 text-white">
-      <div class="hero-content flex flex-col lg:flex-row justify-start items-start">
-        <img src={product?.image} alt={product?.name} class="max-w-sm rounded-lg shadow-2xl " />
+    <div className="hero w-full min-h-screen bg-base-200 text-white">
+      <div className="hero-content flex flex-col lg:flex-row justify-start items-start">
+        <img src={product?.image} alt={product?.name} className="max-w-sm rounded-lg shadow-2xl " />
         <div className='w-full p-6'>
-          <h1 class="text-5xl font-bold">{product.name}</h1>
+          <h1 className="text-5xl font-bold">{product.name}</h1>
           <h1 className='text-lg text-center'>Price: <span className='text-primary'>{product?.price}$</span></h1>
           <h1 className='text-lg text-center'>Available Amount: <span className='text-primary'>{product?.available}</span> Piece </h1>
           <h1 className='text-lg text-center'>Minimum order: <span className='text-primary'>{product?.minOrder}</span> Piece</h1>

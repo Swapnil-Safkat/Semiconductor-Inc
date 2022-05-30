@@ -10,7 +10,7 @@ const BusinessSummary = () => {
   const iconClass = 'w-8 mr-2';
   return (
     <div className='w-full text-white my-8'>
-      <h1 className='text-2xl md:text-5xl text-center mb-4'>Business Summary</h1>
+      <h1 className='text-2xl md:text-5xl text-center mb-6'>Business Summary</h1>
       <div className='bg-neutral flex flex-col md:flex-row justify-around items-center shadow-xl'>
         <div className={summaryClass}>
           <h1 className={amountClass}>1000+</h1>
