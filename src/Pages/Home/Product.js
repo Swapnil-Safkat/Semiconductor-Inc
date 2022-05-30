@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 const Product = ({ product }) => {
-  const { _id, name, image, available, price, description, minOrder } = product;
+  const { _id, name, image, available, price, minOrder } = product;
   const navigate = useNavigate();
   const tableClass = 'bg-neutral px-3';
   const spanClass = 'text-white text-base';
@@ -19,7 +19,9 @@ const Product = ({ product }) => {
               <tbody>
                 <tr >
                   <th className={tableClass}>Price</th>
-                  <td className={tableClass}><span className={spanClass}>{price}$</span></td>
+                  <td className={tableClass}><span className={spanClass}>{product?.discount ?
+                    <><span className='line-through text-xs'>{price}</span>
+                      <span> {+price * (100 - +product?.discount) / 100}</span></> : price}$</span></td>
                 </tr>
                 <tr>
                   <th className={tableClass}>Available Amount</th>

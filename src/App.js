@@ -19,6 +19,7 @@ import AllUsers from './Pages/Dashboard/AllUsers';
 import Blogs from './Pages/Blogs/Blogs';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Purchase from './Pages/Home/Purchase';
+import Products from './Pages/Home/Products';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='home' element={<Home />} />
+          <Route path='products' element={<Products />} />
           <Route path='login' element={<Login />} />
           <Route path='signup' element={<SignUp />} />
           <Route path='blogs' element={<Blogs />} />

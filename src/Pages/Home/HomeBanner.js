@@ -11,7 +11,7 @@ const HomeBanner = () => {
             <h1 className='text-5xl text-white mb-3'>Semiconductor Chip for Industrial and IoT Applications</h1>
             <h1 className='text-lg text-white'>Discover our modern semiconductor chip solutions designed to enhance operational safety and efficiency across factory and building automation applications.</h1>
             <div className='w-full flex items-start mt-4'>
-              <button className="btn btn-outline text-white">Find Products</button>
+              <a href='#products'><button className="btn btn-outline text-white">Find Products</button></a>
             </div>
           </div>
           <a href="#slide2" className="btn btn-circle ml-2">❯</a>
@@ -25,7 +25,7 @@ const HomeBanner = () => {
             <h1 className='text-5xl text-white mb-3'>Best Quality Product For Your Project</h1>
             <h1 className='text-lg text-white'>We guarantee you the best quality product possible in the market, made out of the best quality material with our own nano technology.</h1>
             <div className='w-full flex items-start mt-4'>
-              <button className="btn btn-outline text-white">Find Products</button>
+              <a href='#products'><button className="btn btn-outline text-white">Find Products</button></a>
             </div>
           </div>
           <a href="#slide1" className="btn btn-circle mr-2">❯</a>

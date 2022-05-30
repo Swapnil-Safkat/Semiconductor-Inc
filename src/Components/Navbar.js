@@ -24,18 +24,21 @@ const Navbar = () => {
   const menuItems =
     <>
       <li><NavLink to='/home'>Home</NavLink></li>
+      <li><NavLink to='/products'>Products</NavLink></li>
       {
         user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
       }
       <li><NavLink to='/blogs'>Blogs</NavLink></li>
       <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
       <li>{user ? <>
-        <div className="avatar">
-          <div className="w-8 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">
-            <img alt='avatar' src={profile.img || user.photoURL || "https://api.lorem.space/image/face?hash=64318"} />
+        <NavLink to='/dashboard'>
+          <div className="avatar">
+            <div className="w-8 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2 mr-3">
+              <img alt='avatar' src={profile.img || user.photoURL || "https://api.lorem.space/image/face?hash=64318"} />
+            </div>
+            <h1>{user.displayName}</h1>
           </div>
-          <h1>{user.displayName}</h1>
-        </div>
+        </NavLink>
         <button onClick={() => {
           signOut(auth);
           localStorage.removeItem('accessToken');

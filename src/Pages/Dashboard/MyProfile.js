@@ -16,7 +16,7 @@ const MyProfile = () => {
       'authorization': `bearer ${localStorage.getItem('accessToken')}`
     }
   }).then(res => res.json()));
-
+console.log(profile);
   const imgStorageKey = 'f41342e948ee937d5eb330c2e281e61f';
   const onSubmit = async data => {
     const { name, contact, university, department, hometown, github, linkedin } = data;
@@ -62,7 +62,8 @@ const MyProfile = () => {
       <div className="hero h-full">
         <div className="hero-content w-11/12 flex justify-start items-start flex-col lg:flex-row">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div className="card-body flex flex-col justify-center items-center w-full">
+            <div className="card-body flex flex-col justify-center items-center relative w-full">
+              <h1 className='text-gray-400 text-end text-sm font-bold  absolute top-4 right-4'>{ profile?.role === 'admin' && profile.role}</h1>
               {/* user avatar */}
               <div className='avatar w-3/4 mb-8'>
                 <div className="w-full rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">
