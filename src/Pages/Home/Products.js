@@ -14,7 +14,7 @@ const Products = () => {
   return (
     <div className='w-full text-white my-8'>
       <h1 className='text-5xl text-center'>Our Products</h1>
-      <div className='w-full p-6 flex flex-col justify-around md:flex-row flex-wrap'>
+      <div className='w-full lg:w-3/4 mx-auto p-6 flex flex-col justify-around md:flex-row flex-wrap'>
       {
         products.map(product => <Product key={product._id} product={product}/>)
       }
