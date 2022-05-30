@@ -9,7 +9,7 @@ import Loading from '../../Components/Loading';
 
 const ContactUs = () => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
-  const [user , loading] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const inputClass = `input w-full mt-2 border-2 border-gray-600 focus:border-gray-100`;
   const onSubmit = async contact => {
     console.log(contact);
@@ -28,15 +28,15 @@ const ContactUs = () => {
         } else toast.error('Some Problem Occurred! Please try again');
       })
   }
-  if(loading) return<Loading/>
+  if (loading) return <Loading />
   return (
-    <div class="hero bg-neutral my-20 py-12 text-gray-100">
-      <div class="hero-content flex-col lg:flex-row-reverse">
-        <div class="text-center lg:text-left">
-          <h1 class="text-5xl font-bold">Contact Us!</h1>
-          <p class="py-6">Let Us Know Your Query. Our Team Provides Best Support to Our Customers.</p>
+    <div className="hero bg-neutral my-20 py-12 text-gray-100">
+      <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="text-center lg:text-left">
+          <h1 className="text-5xl font-bold">Contact Us!</h1>
+          <p className="py-6">Let Us Know Your Query. Our Team Provides Best Support to Our Customers.</p>
         </div>
-        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form className='p-5 w-full md:w-1/2 mx-auto text-white' onSubmit={handleSubmit(onSubmit)}>
             {/* name form */}
             <div className="form-control w-full">
@@ -71,7 +71,7 @@ const ContactUs = () => {
               <label className="label text-sm font-semibold py-0 ml-2">
                 <span className="label-text ">Your Opinion</span>
               </label>
-              <input type="text" name='opinion'  className={inputClass}  {...register("opinion",
+              <input type="text" name='opinion' className={inputClass}  {...register("opinion",
                 {
                   required: { value: true, message: 'Opinion is required' },
                 })} />

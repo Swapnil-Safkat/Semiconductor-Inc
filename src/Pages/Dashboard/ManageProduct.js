@@ -14,7 +14,7 @@ const ManageProduct = () => {
   }).then(res => res.json()));
 
   const [deleteConfirm, setDeleteConfirm] = useState(null);
-  
+
   if (isLoading) return <Loading />
   if (isError) {
     toast.error('Loading failed! try again');
@@ -50,7 +50,7 @@ const ManageProduct = () => {
                 <td>{product?.price}</td>
                 <td>
                   <label onClick={() => { setDeleteConfirm(product) }
-                  } htmlFor="delete-confirm" className="btn modal-button">Remove</label>
+                  } htmlhtmlFor="delete-confirm" className="btn modal-button">Remove</label>
 
                 </td>
               </tr>

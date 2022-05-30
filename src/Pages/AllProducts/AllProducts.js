@@ -2,7 +2,8 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import hostLink from '../../Components/host';
 import Loading from '../../Components/Loading';
-import Product from './Product';
+import Product from '../Home/Product';
+
 
 const AllProducts = () => {const { data: products, isLoading } = useQuery('products', () => fetch(`${hostLink()}/products`, {
   method: 'GET',

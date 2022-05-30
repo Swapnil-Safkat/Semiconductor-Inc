@@ -15,12 +15,12 @@ const Dashboard = () => {
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content bg-neutral">
         <div className='py-3  sticky top-36'>
-          <label htmlFor="my-drawer-2" className="btn btn-accent rounded-r-full py-0 px-2 drawer-button lg:hidden">{'>'}</label>
+          <label htmlhtmlFor="my-drawer-2" className="btn btn-accent rounded-r-full py-0 px-2 drawer-button lg:hidden">{'>'}</label>
         </div>
         <Outlet />
       </div>
       <div className="drawer-side">
-        <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+        <label htmlhtmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu pr-4 py-1 overflow-y-auto w-56 bg-base-100 text-base-content">
           <li ><NavLink className='rounded-r-full' to='/dashboard'>Profile</NavLink></li>
           {admin ? <>
