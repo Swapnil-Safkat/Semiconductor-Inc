@@ -19,7 +19,7 @@ const Products = () => {
       <h1 className='text-5xl text-center'>Our Products</h1>
       <div className='w-full lg:w-3/4 mx-auto p-6 flex flex-col justify-around md:flex-row flex-wrap'>
       {
-        products.map(product => <Product key={product._id} product={product}/>)
+        products?.map(product => <Product key={product._id} product={product}/>)
       }
       </div>
       <div className="my-4 w-3/4 mx-auto flex justify-end items-start">
